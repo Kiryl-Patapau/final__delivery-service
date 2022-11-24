@@ -16,9 +16,9 @@ public static class SaveOrderFunction
     public static async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Function, "post", Route = "save")] HttpRequest request,
         [CosmosDB(
-            databaseName: "cosmosdb-e-shop-catalog",
+            databaseName: "cosmosdb-catalog",
             collectionName: "Orders",
-            ConnectionStringSetting = "EShopCatalogDatabase")] IAsyncCollector<Order> orders,
+            ConnectionStringSetting = "CatalogDatabase")] IAsyncCollector<Order> orders,
         ILogger logger)
     {
         try
